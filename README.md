@@ -13,7 +13,7 @@ Fzy-vim doesn't come with any built in keybindings. To be honest it doesn't do m
 
 ##Commands
 - `FzyLsAg` - list files using the silversearcher, respects .gitignore and .agignore and open it in the current buffer.
-- `FzyTag` - list tags, open tag defintion in current bugger, a better :tselect.
+- `FzyTag` - list tags, open tag defintion in current buffer - a better :tselect.
 - `FzyWorkingTree` - list all currently modified files and open in current buffer.
 - `FzyGem` - list all gems, then list all files in the selected gem.
 

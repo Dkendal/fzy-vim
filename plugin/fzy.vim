@@ -6,3 +6,4 @@ let g:loaded_fzy = 1
 
 command! -nargs=? -complete=dir FzyLsAg :call fzy#execute('ag -l -g "" --nocolor ' . <q-args> . ' | fzy', 'edit')
 command! FzyTag :call fzy#execute('cat tags | cut -f 1,5 | fzy | cut -f 1', 'tag')
+command! FzyWorkingTree :call fzy#execute("git status --porcelain --ignore-submodules | fzy | sed 's/...//'", 'edit')

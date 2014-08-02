@@ -15,3 +15,17 @@ function! fzy#execute(shell_command, vim_command)
     exec a:vim_command . ' ' . output
   endif
 endfunction
+
+function! fzy#fzy_buffer()
+  let tmp = tempname()
+
+  exec 'redir > '.tmp | silent ls | redir END
+
+  let $V_BUFFER_FILE = tmp
+  let shell_cmd = 'cat $V_BUFFER_FILE |' .
+        \ 'tail -n +2 |' .
+        \ 'sed -r ''s/.*"(.+)".*/\1/'' |' .
+        \ 'fzy'
+
+  :call fzy#execute(shell_cmd, 'buffer')
+endfunction

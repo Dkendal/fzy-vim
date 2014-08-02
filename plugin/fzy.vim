@@ -19,3 +19,5 @@ command! FzyGem
 command! FzyWorkingTree
       \ :call fzy#execute("git status --porcelain --ignore-submodules" .
       \ "| fzy | sed 's/...//'", 'edit')
+
+command! FzyBuffer :call fzy#fzy_buffer()

@@ -27,5 +27,18 @@ function! fzy#fzy_buffer()
         \ 'sed -r ''s/.*"(.+)".*/\1/'' |' .
         \ 'fzy'
 
-  :call fzy#execute(shell_cmd, 'buffer')
+ :call fzy#execute(shell_cmd, 'buffer')
+endfunction
+
+function! fzy#variable_command(shell_cmd, prefixes, name)
+  for [prefix, excmd] in items(a:prefixes)
+
+    if prefix == 'default'
+      let prefix = ''
+    endif
+
+    let cmd_name = prefix.a:name
+    exec 'command! ' . cmd_name .
+          \ ' :call fzy#execute("' . a:shell_cmd . '", "' . excmd . '")'
+  endfor
 endfunction

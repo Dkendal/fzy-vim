@@ -16,6 +16,10 @@ Fzy-vim doesn't come with any built in keybindings. To be honest it doesn't do m
 - `FzyTag` - list tags, open tag defintion in current buffer - a better :tselect.
 - `FzyWorkingTree` - list all currently modified files and open in current buffer.
 - `FzyGem` - list all gems, then list all files in the selected gem.
+- `FzyBuffer` - fzy select :ls
+
+All of these commands, excluding FzyBuffer which is pending; have tab, vertical, and split variants; which start with either 'T', 'V', or 'S'; respectively.
+eg: `FzyTag`, `TFzyTag`, `VFzyTag`, `SFzyTag`
 
 ##Functions
 - `fzy#exectute(shell_command, vim_command)` - shells out the command and pipes it's output back into the vim command, note shell_command must also include `fzy`

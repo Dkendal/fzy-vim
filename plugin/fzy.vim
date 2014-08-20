@@ -30,7 +30,7 @@ let s:working_tree_sh = "git status --porcelain --ignore-submodules | fzy | sed 
 let s:ls_ag_sh = "ag -l -g '' --nocolor | fzy"
 
 let s:gems_sh = "echo $(cd $(bundle list | tr -s ' ' | tail -n +2 |" .
-      \ "sed 's/...//' | fzy | cut -d ' ' -f 1 |" .
+      \ "sed 's/...//' | cut -d ' ' -f 1 | fzy |" .
       \ "xargs -I {} bundle show {}); echo $PWD/$(ag -g '' | fzy)  )"
 
 let s:tags_sh = 'cat tags | cut -f 1,5 | fzy | cut -f 1'

@@ -22,6 +22,6 @@ All of these commands, excluding FzyBuffer which is pending; have tab, vertical,
 eg: `FzyTag`, `TFzyTag`, `VFzyTag`, `SFzyTag`
 
 ##Functions
-- `fzy#exectute(shell_command, vim_command)` - shells out the command and pipes it's output back into the vim command, note shell_command must also include `fzy`
+- `fzy#execute(shell_command, vim_command)` - shells out the command and pipes it's output back into the vim command, note shell_command must also include `fzy`
 eg: `:call fzy#execute('ag -l -g "" --nocolor | fzy', 'edit')`
 this is done so you can do further transformations with the output of fzy, before it's returned to vim.
